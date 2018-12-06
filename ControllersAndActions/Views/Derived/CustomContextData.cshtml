@@ -1,0 +1,19 @@
+@model string
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CustomContextData</title>
+</head>
+<body>
+    <div>
+      IP:@ViewBag.clientIP
+      Browser:@ViewBag.clientBrowser
+    </div>
+</body>
+</html>
