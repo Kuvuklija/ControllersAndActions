@@ -1,14 +1,22 @@
-﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ControllersAndActions.Controllers;
+using System.Web.Mvc;
 
 namespace ControllersAndActions.Tests
 {
-    [TestClass]
-    public class UnitTest1
-    {
+  [TestClass]
+    public class ActionTests
+  {
         [TestMethod]
-        public void TestMethod1()
+        public void ControllerTest()
         {
+          //arrange
+          ExampleController target = new ExampleController();
+          //action
+          ViewResult result = target.Index();
+         //assert
+         //Assert.AreEqual("Homepage", result.ViewName);
+          Assert.AreEqual("", result.ViewName);
         }
     }
 }
