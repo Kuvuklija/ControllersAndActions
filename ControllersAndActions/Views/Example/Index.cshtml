@@ -1,8 +1,10 @@
-
+@model DateTime
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
+The day is: @Model.DayOfWeek
+<p>Welcome:<br />@ViewBag.Hi! I <em>use</em> a <b>@ViewBag.Browser</b> <i>brouser</i></p>
 
