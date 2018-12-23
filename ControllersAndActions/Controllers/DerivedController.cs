@@ -8,7 +8,11 @@ namespace ControllersAndActions.Controllers
     
         public ActionResult Index(){
             ViewBag.Message = "Hello from the DerivedController Index method";
-            return View("MyView");
+
+      //by redirecting from MyExample controller
+      ViewBag.Message = TempData["Message"];
+      ViewBag.Date = TempData["Date"];
+            return View("DerivedView");
         }
 
         public ActionResult CustomContextData() {

@@ -11,16 +11,33 @@ namespace ControllersAndActions.Tests
         public void ControllerTest()
         {
           //arrange
-          ExampleController target = new ExampleController();
-          //action
-          ViewResult result = target.Index();
+          MyExampleController target = new MyExampleController();
+      //action
+      //ViewResult result = target.Index();
       //assert
       //Assert.AreEqual("Homepage", result.ViewName); //if ViewResult("Homepage")
       //Assert.AreEqual("", result.ViewName);          //if ViewResult()
       //Assert.AreEqual("~/Views/Derived/MyView.cshtml", result.ViewName);      //if ViewResult("~/Views/Derived/MyView")
-      Assert.AreEqual("", result.ViewName);
-      Assert.IsInstanceOfType(result.ViewData.Model, typeof(System.DateTime));
-      Assert.AreEqual("Hello",result.ViewBag.Hi);
+      //Assert.AreEqual("", result.ViewName);
+      //Assert.IsInstanceOfType(result.ViewData.Model, typeof(System.DateTime));
+      //Assert.AreEqual("Hello",result.ViewBag.Hi);
+
+      //RedirectResult result = target.Redirect();
+      //Assert.IsTrue(result.Permanent);
+      //Assert.AreEqual("Index", result.Url);
+
+      //RedirectToRouteResult result = target.Redirect();
+
+      //Assert.IsFalse(result.Permanent);
+      //Assert.AreEqual("MyExample", result.RouteValues["conroller"]);
+      //Assert.AreEqual("Index", result.RouteValues["action"]);
+      //Assert.AreEqual("MyId", result.RouteValues["id"]);
+
+
+      HttpStatusCodeResult result_2 = target.StatusCode();
+      Assert.AreEqual(401, result_2.StatusCode);
+
+
         }
     }
 }
